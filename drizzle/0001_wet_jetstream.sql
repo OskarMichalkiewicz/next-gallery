@@ -1,0 +1,1 @@
+ALTER TABLE "next-gallery_user" ADD COLUMN "password" text;
