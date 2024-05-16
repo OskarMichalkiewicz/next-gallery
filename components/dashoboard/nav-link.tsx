@@ -3,10 +3,13 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
+import { UploadButton } from "../uploadthing";
+import { useRouter } from "next/navigation";
 
 const links = [{ name: "Home", href: "/dashboard" }];
 
 export default function NavLinks() {
+  const router = useRouter();
   const pathname = usePathname();
   return (
     <>
@@ -27,6 +30,12 @@ export default function NavLinks() {
           </Link>
         );
       })}
+      <UploadButton
+        endpoint="imageUploader"
+        onClientUploadComplete={() => {
+          router.refresh();
+        }}
+      />
     </>
   );
 }

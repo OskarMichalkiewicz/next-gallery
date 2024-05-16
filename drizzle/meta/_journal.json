@@ -22,6 +22,20 @@
       "when": 1715700489037,
       "tag": "0002_organic_energizer",
       "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "6",
+      "when": 1715780013631,
+      "tag": "0003_smiling_enchantress",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "6",
+      "when": 1715792699507,
+      "tag": "0004_legal_martin_li",
+      "breakpoints": true
     }
   ]
 }
