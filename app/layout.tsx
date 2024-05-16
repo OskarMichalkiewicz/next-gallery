@@ -14,22 +14,18 @@ export const metadata = {
 
 export default function RootLayout({
   children,
+  modal,
 }: {
   children: React.ReactNode;
+  modal: React.ReactNode;
 }) {
   return (
     <html lang="en" className={`${GeistSans.variable}`}>
-      <NextSSRPlugin
-        /**
-         * The `extractRouterConfig` will extract **only** the route configs
-         * from the router to prevent additional information from being
-         * leaked to the client. The data passed to the client is the same
-         * as if you were to fetch `/api/uploadthing` directly.
-         */
-        routerConfig={extractRouterConfig(ourFileRouter)}
-      />
+      <NextSSRPlugin routerConfig={extractRouterConfig(ourFileRouter)} />
       <body className="min-h-screen bg-gradient-to-b from-[#2e026d] to-[#15162c] text-white">
         {children}
+        {modal}
+        <div id="modal-root"></div>
       </body>
     </html>
   );
