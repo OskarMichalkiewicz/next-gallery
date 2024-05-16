@@ -4,8 +4,12 @@ import { authConfig } from "./auth.config";
 import { z } from "zod";
 import bcrypt from "bcrypt";
 import { db } from "./server/db";
+import { InferSelectModel } from "drizzle-orm";
+import { users } from "./server/db/schema";
 
-async function getUser(email: string): Promise<any | undefined> {
+async function getUser(
+  email: string,
+): Promise<InferSelectModel<typeof users> | undefined> {
   try {
     const user = await db.query.users.findFirst({
       where: (users, { eq }) => eq(users.email, email),
