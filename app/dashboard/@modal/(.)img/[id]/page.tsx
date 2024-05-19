@@ -1,4 +1,4 @@
-import { Modal } from "./modal";
+import { Modal } from "~/components/modal";
 import FullPageImage from "~/components/full-page-image";
 
 export default async function ImageModal({

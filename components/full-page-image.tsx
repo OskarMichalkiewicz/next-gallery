@@ -3,16 +3,16 @@ import { getImage } from "~/server/queries";
 export default async function FullPageImage({ id }: { id: string }) {
   const image = await getImage(id);
   return (
-    <div className="flex h-full justify-center">
-      <div className="flex flex-shrink justify-start">
+    <div className="my-auto flex h-full items-center justify-center">
+      <div className=" relative flex h-[90%] flex-col justify-start bg-black">
         <img
-          className="flex-shrink object-contain"
+          className="h-full flex-shrink object-contain"
           src={image.url}
           alt={image.name}
         />
-      </div>
-      <div className="flex w-72 flex-shrink-0 justify-center bg-black">
-        <p className="text-lg">{image.name}</p>
+        <div className="absolute bottom-0 h-32 w-full flex-shrink-0 bg-zinc-900/85 p-2">
+          <p className="text-lg">{image.name}</p>
+        </div>
       </div>
     </div>
   );

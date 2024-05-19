@@ -8,11 +8,11 @@ export default function RootLayout({
   modal: React.ReactNode;
 }) {
   return (
-    <div className="flex h-screen flex-col md:flex-row md:overflow-hidden">
-      <div className="w-full flex-none md:w-64">
+    <div className="flex h-screen flex-col">
+      <div className="w-full flex-none">
         <SideNav />
       </div>
-      <div className="flex-grow p-2 md:overflow-y-auto md:p-4">
+      <div className="flex-grow px-3">
         {children}
         {modal}
         <div id="modal-root"></div>

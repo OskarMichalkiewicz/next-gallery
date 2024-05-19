@@ -14,19 +14,13 @@ export const metadata = {
 
 export default function RootLayout({
   children,
-  modal,
 }: {
   children: React.ReactNode;
-  modal: React.ReactNode;
 }) {
   return (
     <html lang="en" className={`${GeistSans.variable}`}>
       <NextSSRPlugin routerConfig={extractRouterConfig(ourFileRouter)} />
-      <body className="min-h-screen bg-gradient-to-b from-[#2e026d] to-[#15162c] text-white">
-        {children}
-        {modal}
-        <div id="modal-root"></div>
-      </body>
+      <body className="min-h-screen bg-black text-white">{children}</body>
     </html>
   );
 }
