@@ -1,17 +1,16 @@
 "use client";
 
-import Link from "next/link";
 import { authenticate } from "~/app/actions/register";
 import { useFormState, useFormStatus } from "react-dom";
-import { Button } from "~/components/button";
-import Input from "~/components/input";
+import { Button } from "~/components/ui/button";
+import Input from "~/components/ui/input";
 import { ArrowRightIcon } from "@heroicons/react/24/outline";
 
 export default function Form() {
   const [errorMessage, dispatch] = useFormState(authenticate, undefined);
   return (
     <form action={dispatch} aria-describedby="form-error">
-      <div className="rounded-md bg-slate-600 p-4 md:p-6">
+      <div className="rounded-md bg-slate-800 p-4 md:p-6">
         <h1 className="mb-3 text-2xl">Please log in to continue.</h1>
         <Input
           label="Email"

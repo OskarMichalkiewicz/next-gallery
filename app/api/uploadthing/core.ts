@@ -14,7 +14,6 @@ export const ourFileRouter = {
     .middleware(async ({ req }) => {
       // This code runs on your server before upload
       const session = await auth();
-      console.log(session);
 
       // If you throw, the user will not be able to upload
       if (!session?.user?.id) throw new UploadThingError("Unauthorized");

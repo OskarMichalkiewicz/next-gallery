@@ -5,6 +5,7 @@ import { NextSSRPlugin } from "@uploadthing/react/next-ssr-plugin";
 import { GeistSans } from "geist/font/sans";
 import { extractRouterConfig } from "uploadthing/server";
 import { ourFileRouter } from "./api/uploadthing/core";
+import { Toaster } from "sonner";
 
 export const metadata = {
   title: "Create T3 App",
@@ -18,9 +19,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${GeistSans.variable}`}>
+    <html lang="en">
       <NextSSRPlugin routerConfig={extractRouterConfig(ourFileRouter)} />
-      <body className="min-h-screen bg-black text-white">{children}</body>
+      <body
+        className={`${GeistSans.variable} dark min-h-screen text-violet-50`}
+      >
+        {children}
+        <Toaster theme="dark" />
+      </body>
     </html>
   );
 }

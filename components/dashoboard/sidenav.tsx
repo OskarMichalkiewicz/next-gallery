@@ -8,7 +8,7 @@ export default function SideNav() {
   return (
     <div className="flex h-full flex-col px-3 py-4">
       <Link
-        className="mb-2 flex h-10 items-center justify-start rounded-md bg-violet-900 px-2"
+        className="mb-2 flex h-10 items-center justify-start rounded-md bg-violet-950 px-2"
         href="/"
       >
         <div className="flex flex-row items-center gap-1 leading-none">

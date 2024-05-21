@@ -9,15 +9,11 @@ export default function Input({ label, errors, ...rest }: InputProps) {
       <label htmlFor={rest.id} className="mb-2 block text-sm font-medium">
         {label}
       </label>
-      <div className="relative rounded-md bg-slate-200">
-        <div className="relative">
-          <input
-            {...rest}
-            className="peer block w-full rounded-md border border-slate-400 bg-slate-700 py-2 pl-2 text-sm outline-2 placeholder:text-slate-400"
-            aria-describedby={`${rest.id}-error`}
-          />
-        </div>
-      </div>
+      <input
+        {...rest}
+        className="peer block w-full rounded-md border border-slate-600 bg-slate-900 py-2 pl-2 text-sm outline-none placeholder:text-slate-400 focus:border-violet-900"
+        aria-describedby={`${rest.id}-error`}
+      />
       <div id={`${rest.id}-error`} aria-live="polite" aria-atomic="true">
         {errors &&
           errors.map((error: string) => (

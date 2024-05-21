@@ -1,5 +1,5 @@
-import { Modal } from "~/components/modal";
-import FullPageImage from "~/components/full-page-image";
+import { Modal } from "~/components/ui/modal";
+import FullPageImage from "~/components/ui/full-page-image";
 
 export default async function ImageModal({
   params: { id },

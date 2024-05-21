@@ -1,10 +1,9 @@
 "use client";
 
-import Link from "next/link";
 import { register } from "~/app/actions/register";
 import { useFormState, useFormStatus } from "react-dom";
-import { Button } from "~/components/button";
-import Input from "~/components/input";
+import { Button } from "~/components/ui/button";
+import Input from "~/components/ui/input";
 import { ArrowRightIcon } from "@heroicons/react/24/outline";
 
 export default function Form() {
@@ -12,7 +11,7 @@ export default function Form() {
   const [state, dispatch] = useFormState(register, initialState);
   return (
     <form action={dispatch} aria-describedby="form-error">
-      <div className="rounded-md bg-slate-600 p-4 md:p-6">
+      <div className="rounded-md bg-slate-800 p-4 md:p-6">
         <h1 className="mb-3 text-2xl">Register to use application.</h1>
         <Input
           label="Email"
@@ -52,7 +51,7 @@ function RegisterButton() {
   const { pending } = useFormStatus();
   return (
     <Button className="mt-4 w-full" aria-disabled={pending}>
-      Register <ArrowRightIcon className="ml-auto h-5 w-5 text-slate-50" />
+      Register <ArrowRightIcon className="ml-auto h-5 w-5" />
     </Button>
   );
 }

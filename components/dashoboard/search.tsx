@@ -25,10 +25,10 @@ export function Search() {
         onChange={(e) => {
           handleSearch(e.target.value);
         }}
-        className="peer block h-10 w-full grow rounded-md border border-slate-400 bg-slate-700 py-2 pl-10 text-sm outline-2 placeholder:text-slate-400"
+        className="peer block h-10 w-full grow rounded-md border border-slate-600 bg-slate-800 py-2 pl-10 text-sm outline-none placeholder:text-slate-400 focus:border-violet-500"
         defaultValue={searchParams.get("query")?.toString()}
       />
-      <MagnifyingGlassIcon className="absolute left-3 top-1/3 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
+      <MagnifyingGlassIcon className="absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 peer-focus:text-violet-500" />
     </div>
   );
 }
