@@ -1,4 +1,5 @@
-import SideNav from "~/components/dashoboard/sidenav";
+import LogoHeader from "~/components/dashoboard/logo-header";
+import SignOutButton from "~/components/dashoboard/sign-out-button";
 
 export default function RootLayout({
   children,
@@ -9,14 +10,13 @@ export default function RootLayout({
 }) {
   return (
     <div className="flex h-screen flex-col">
-      <div className="w-full flex-none">
-        <SideNav />
+      <div className="mx-3 mb-3 mt-3 flex space-x-2.5">
+        <LogoHeader />
+        <SignOutButton />
       </div>
-      <div className="flex-grow px-3">
-        {children}
-        {modal}
-        <div id="modal-root"></div>
-      </div>
+      {children}
+      {modal}
+      <div id="modal-root"></div>
     </div>
   );
 }

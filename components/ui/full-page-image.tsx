@@ -1,18 +1,22 @@
-import { getImage } from "~/server/queries";
+import { EllipsisVerticalIcon } from "@heroicons/react/24/outline";
+import { getImage, getUser } from "~/server/queries";
 
 export default async function FullPageImage({ id }: { id: string }) {
   const image = await getImage(id);
+  const user = await getUser(image.userId);
   return (
-    <div className="my-auto flex h-full items-center justify-center">
-      <div className=" relative flex h-[90%] flex-col justify-start bg-black">
-        <img
-          className="h-full flex-shrink object-contain"
-          src={image.url}
-          alt={image.name}
-        />
-        <div className="absolute bottom-0 h-32 w-full flex-shrink-0 bg-zinc-900/85 p-2">
-          <p className="text-lg">{image.name}</p>
-        </div>
+    <div className="flex h-screen flex-col items-center justify-center bg-slate-950">
+      <div className="flex h-16 w-full justify-end">
+        <EllipsisVerticalIcon className="mr-6 w-7 cursor-pointer" />
+      </div>
+      <img
+        className="h-[calc(100%-12rem)] object-contain"
+        src={image.url}
+        alt={image.name}
+      />
+      <div className=" h-32 w-full px-6">
+        <p className="text-xl font-bold">{user.name}</p>
+        <p>{image.name}</p>
       </div>
     </div>
   );

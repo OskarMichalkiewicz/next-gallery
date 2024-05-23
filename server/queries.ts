@@ -55,3 +55,18 @@ export const getFilteredImages = async (query: string) => {
     throw new Error("Failed to fetch images.");
   }
 };
+
+export const getUser = async (id: string) => {
+  try {
+    const session = await auth();
+    if (!session?.user?.id) throw new Error("Unauthorized");
+    const user = await db.query.users.findFirst({
+      where: (model, { eq }) => eq(model.id, id),
+    });
+    if (!user) throw new Error("User not found.");
+    return user;
+  } catch (e) {
+    console.error("Database error: ", e);
+    throw new Error("Failed to fetch user.");
+  }
+};
